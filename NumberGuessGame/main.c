@@ -6,17 +6,23 @@ int main(){
     char nochmalSpielen ;
     do
     {
-        
+        int min, max;
+       
     
     printf("Welcome to the Guessing Game!\n");
 
     int geheimzahl, tipp, versuche = 0;
+
+    printf("bitte geben sie den startwert des zahlenbereiches ein (z.b 1) : \n");
+    scanf("%d", &min);
+    printf("geben sie jetzt bitte den endwert des zahlenbereiches ein(muss größer als den startwert ) :\n");
+    scanf("%d", &max);
     
 
     srand(time(NULL));
-    geheimzahl = rand() % 100 + 1;
+    geheimzahl = rand() %(max - min + 1) + min;
 
-    printf("ich habe mir eine zahl zwischen 1 und 100 ausgedacht.\n");
+  
     printf("versuch diese zahl jetzt zu raten\n");
     printf("sie haben 6 versuchen, um die nummer zu raten\n");
 

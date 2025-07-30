@@ -6,16 +6,25 @@ import java.util.Scanner;
         try (Scanner scanner = new Scanner(System.in)) {
             String nochmal;
         do{
+            int versuche = 0;
+            int eingabe;
+            int max, min;
+
+            System.out.println("willkommen bei dem spiel Guess the number");
+            
+            System.out.println("bitte geben sie den startwert des zahlenbereiches ein (z.b 1) :");
+            min = scanner.nextInt();
+            System.out.println("geben sie jetzt bitte den endwert des zahlenbereiches ein(muss größer als den startwert ) : ");
+            max = scanner.nextInt();
+            
         
             Random random = new Random();
             
-            int geheimzahl = random.nextInt(100) + 1;
-            int versuche = 0;
-            int eingabe;
-            
+            int geheimzahl = random.nextInt(max - min + 1) + min;
           
-            System.out.println("willkommen bei dem spiel Guess the number");
-            System.out.println("raten sie bitte eine nummer zwischen 1 und 100");
+          
+          
+           
             System.out.println("sie haben nur 6 versuchen");
             do {
                
